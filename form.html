@@ -1,0 +1,114 @@
+
+<html>
+    <head>
+    <title>Form Validation</title>
+        <style>
+        h1{
+  background-color : green;
+}
+#first{
+  display:flex;
+  text-align : left;
+}
+#second{
+  display : flex;
+  display: left;
+}
+.main{
+  
+	box-sizing: border-box; 
+	width: 100%;
+	border: 20px solid cornflowerblue ;
+	float: center;
+	align-content: center; 
+	align-items: center; 
+  margin-right: 10px; 
+	font-family: Trebuchet MS;
+	font-size:16x;
+}
+#done{
+  background-color : #5fcf80;
+}
+            #fname{
+                color:aqua;
+            }
+
+        </style>
+        <script> 
+function funct()								 
+{ 
+	var fname = document.forms["RegForm"]["Fname"];	
+  var lname = document.forms["RegForm"]["Lname"];	
+	var email = document.forms["RegForm"]["EMail"]; 
+	var pass = document.forms["RegForm"]["Password"]; 
+	
+	if (fname.value == "")								 
+	{ 
+		window.alert("Please enter your firstname."); 
+		fname.focus(); 
+		return false; 
+	} 
+
+	if (lname.value == "")							 
+	{ 
+		window.alert("Please enter your lastname."); 
+		lname.focus(); 
+		return false; 
+	} 
+	
+	if (email.value == "")								 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (email.value.indexOf("@", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (email.value.indexOf(".", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (password.value == "")					 
+	{ 
+		window.alert("Please enter your password"); 
+		password.focus(); 
+		return false; 
+	} 
+    
+
+	return true; 
+}</script> 
+
+    </head>
+<body> 
+  <div class="main">
+<h1 style="text-align: center"> Get Started Today ! </h1>		 
+<form name="RegForm" action="/submit.php" onsubmit="return funct()" method="post"> 
+	
+    <div id="first">
+	<div id="one">
+    <p>First Name : <br><br> <input type="text" size=50 name="Fname" placeholder="Enter Firstname" pattern="[A-Za-z]+"> </p><br></div>
+	<div id="two">
+     <p> Last Name: <br> <br> <input type="text" size=40 name="Lname" placeholder="Enter Lastname" pattern="[A-Za-z]+"> </p><br></div> 
+    </div>
+    <div id = "second">
+	<div id="three"><p>E-mail Address: <br> <br> <input type="text" size=40 name="EMail" placeholder="Enter your Mail "> </p><br></div>
+	<div id="four"><p>Password: <br><br> <input type="text" size=40 name="Password" placeholder="Enter your correct password" pattern="[A-Za-z0-9]+"></p></div>
+    </div>
+    <div>
+        <center><button type="Submit" id="done" value="Claim Your Free Trail !">Claim Your Free Trail !</button>
+            <p>You are agreeing to our <a href="Terms and Conditions">Terms and Condition</a></p></center>
+  </div>
+</form>
+    </div>
+</body>
+</html>
